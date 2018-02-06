@@ -1,12 +1,46 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/detail/detail"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f00",
+    "navigationBarTitleText": "生米煮成稀饭",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor":"#f00",
+    "borderStyle": "white",
+    "color": "#e6e6e6",
+    "selectedColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_d.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "列表",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/list_d.png"
+      },
+      {
+        "pagePath": "pages/detail/detail",
+        "text": "详情",
+        "iconPath": "images/detail.png",
+        "selectedIconPath": "images/detail_d.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "images/log.png",
+        "selectedIconPath": "images/log_d.png"
+      }
+    ]
   }
 }

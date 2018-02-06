@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    docs:[],
   },
   //事件处理函数
   bindViewTap: function() {
@@ -25,6 +26,7 @@ Page({
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
+        //console.info(res.userInfo);
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -42,7 +44,7 @@ Page({
         }
       })
     }
-    this.firstRequest();
+    //this.firstRequest();
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -53,6 +55,7 @@ Page({
     })
   },
   firstRequest(){
+    let _that = this;
     wx.request({
       url: 'https://smzcxf.com/index.php?s=/index/get_doclist',
       data: {
@@ -63,7 +66,10 @@ Page({
           'content-type': 'application/json' // 默认值
       },
       success: function(res) {
-        console.log(res.data)
+        _that.setData({
+          docs:res.data.data
+        })
+        console.log(res.data.data)
       }
     });
   },
