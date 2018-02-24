@@ -44,7 +44,6 @@ Page({
         }
       })
     }
-    //this.firstRequest();
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -53,24 +52,5 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  },
-  firstRequest(){
-    let _that = this;
-    wx.request({
-      url: 'https://smzcxf.com/index.php?s=/index/get_doclist',
-      data: {
-         x: '' ,
-         y: ''
-      },
-      header: {
-          'content-type': 'application/json' // 默认值
-      },
-      success: function(res) {
-        _that.setData({
-          docs:res.data.data
-        })
-        console.log(res.data.data)
-      }
-    });
   },
 })

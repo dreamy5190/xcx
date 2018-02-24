@@ -30,12 +30,6 @@
         "selectedIconPath": "images/list_d.png"
       },
       {
-        "pagePath": "pages/detail/detail",
-        "text": "详情",
-        "iconPath": "images/detail.png",
-        "selectedIconPath": "images/detail_d.png"
-      },
-      {
         "pagePath": "pages/logs/logs",
         "text": "日志",
         "iconPath": "images/log.png",

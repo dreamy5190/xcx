@@ -1,2 +1,11 @@
 <!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+  <block>
+    <view class="list">
+      <view wx:for="{{docs}}" wx:for-item="doc" wx:for-index="idx" wx:key="idx">        
+        <navigator url="../detail/detail?id={{docs[idx].id}}" hover-class="navigator-hover">
+          <text> {{idx+1}}:{{docs[idx].title}}</text>
+        </navigator>
+      </view>
+    </view>
+  </block> 
+<!-- <button bindtap='navToDetail'>点击跳转</button> -->

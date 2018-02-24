@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getDocList();
   },
 
   /**
@@ -62,5 +62,30 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  navToDetail:function(event){
+    console.log('ssss');
+    wx.navigateTo({
+      url: '../detail/detail?id=1'
+    })
+  },
+  getDocList() {
+    let _that = this;
+    wx.request({
+      url: 'https://smzcxf.com/index.php?s=/index/get_doclist',
+      data: {
+        x: '',
+        y: ''
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        _that.setData({
+          docs: res.data.data
+        })
+        console.log(_that.data.docs[0])
+      }
+    });
+  },
 })

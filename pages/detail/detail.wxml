@@ -1,2 +1,10 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<import src="../../wxParse/wxParse.wxml"/>
+<view wx:if="{{!content}}">
+  <text>内容正在加载，请稍后</text>
+</view>
+<view class="content" wx:else>
+	<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+<!-- {{content}} -->
+</view>
+

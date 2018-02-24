@@ -1,1 +1,4 @@
 /* pages/list/list.wxss */
+.list{width: 98%;margin: 0 auto;overflow: hidden;text-overflow: ellipsis;white-space: pre;}
+.list view{height: 40px;line-height: 40px;}
+.list view text{width: 100%;display: block;overflow: hidden;text-overflow: ellipsis;white-space: pre;}
